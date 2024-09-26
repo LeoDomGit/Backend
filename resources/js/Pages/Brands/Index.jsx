@@ -274,7 +274,7 @@ function Index({ brands }) {
           </div>
         </nav>
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-7">
             {data && data.length > 0 && (
               <Box sx={{ height: 400, width: "100%" }}>
                 <DataGrid

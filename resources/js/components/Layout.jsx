@@ -53,7 +53,7 @@ function Layout({ children }) {
 								<MenuItem icon={<InventoryIcon />}>Sản phẩm</MenuItem>
 							</a>
 						</SubMenu>
-						<a href={"/contacts"}>
+						{/* <a href={"/contacts"}>
 							<MenuItem icon={<DialerSipIcon />}>Liên hệ</MenuItem>
 						</a>
 						<a href={"/bookings"}>
@@ -86,7 +86,7 @@ function Layout({ children }) {
 							<a href={"/services"}>
 								<MenuItem icon={<DesignServicesTwoToneIcon />}>Dịch vụ </MenuItem>
 							</a>
-						</SubMenu>
+						</SubMenu> */}
 						<a href={"/logout"}>
 							<MenuItem icon={<LogoutIcon />}>Log out</MenuItem>
 						</a>

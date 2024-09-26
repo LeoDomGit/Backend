@@ -97,12 +97,6 @@ function Index({roles,users}) {
                 email: email,
                 idRole: idRole
             },
-            // {
-            //     headers: {
-            //         Authorization: `Bearer ${localStorage.getItem("token")}`,
-            //         Accept: "application/json",
-            //     },
-            // }
         ).then((res) => {
                 if (res.data.check == false) {
                     if (res.data.msg) {
@@ -118,7 +112,7 @@ function Index({roles,users}) {
                     });
                     resetCreate();
                     if (res.data.data) {
-                        setUsers(res.data.data);
+                        setData(res.data.data);
                         resetCreate()
                     } else {
                         setUsers([]);

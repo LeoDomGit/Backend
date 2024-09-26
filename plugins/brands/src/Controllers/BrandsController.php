@@ -63,7 +63,7 @@ class BrandsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Categories $categories)
+    public function edit()
     {
         //
     }
@@ -71,7 +71,7 @@ class BrandsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Categories $categories,$id)
+    public function update(Request $request,$id)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'unique:brands,name',

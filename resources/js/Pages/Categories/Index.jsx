@@ -8,10 +8,10 @@ import { DataGrid } from '@mui/x-data-grid';
 import 'notyf/notyf.min.css';
 import Swal from 'sweetalert2'
 import axios from 'axios';
-function Index({ categories }) {
+function Index({ dataset }) {
   const [category, setCategory] = useState('');
   const [id_parent, setIdParent] = useState(null);
-  const [data, setData] = useState(categories)
+  const [data, setData] = useState(dataset)
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -30,8 +30,10 @@ const renderParentSelect = (params) => {
       onChange={(e) => handleCellEditStop(params.id, 'id_parent', e.target.value)}
     >
       <option value=''>None</option>
-      {categories.map(category => (
-        <option key={category.id} value={category.id}>{category.name}</option>
+      {dataset.map(category => (
+        category.id !== params.id && ( // Changed to use logical AND
+          <option key={category.id} value={category.id}>{category.name}</option>
+        )
       ))}
     </select>
   );
@@ -263,7 +265,7 @@ const renderParentSelect = (params) => {
             <label htmlFor="">Parents</label>
             <select name="" id="" onChange={(e)=>setIdParent(e.target.value)} defaultValue={0} className="form-control">
                 <option value="0" disabled>Chọn một loại sản phẩm phụ thuộc </option>
-                {categories.length>0 && categories.map((item,index)=>(
+                {dataset.length>0 && dataset.map((item,index)=>(
                   <option value={item.id}>{item.name}</option>
                 ))}
             </select>
